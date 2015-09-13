@@ -60,7 +60,7 @@ powerConsDF$DateTime<-strptime(powerConsDF$DateTime, format = "%Y-%m-%d %H:%M:%S
 
 ##Open png file 
 cat(sprintf("Opening output file: \n\t%s\n", outputFile))
-png(filename = outputFile)
+png(filename = outputFile, bg = "transparent")
 
 ##Create the image
 hist(powerConsDF$Global_active_power,main = "Global Active Power",
