@@ -14,11 +14,11 @@
 fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 trueFileMD5 <- "41f51806846b6b567b8ae701a300a3de"
 
-##setwd("~/Documents/School/coursera/data science/exploratory data analysis/project1")
+##setwd("~/Documents/School/coursera/data science/exploratory data analysis/project1/ExData_Plotting1/")
 baseDir <- getwd()
 
 zipFile <- paste(baseDir,"/household_power_consumption.zip", sep="")
-dataFile <- paste(baseDir,"/household_power_consumption.txt", sep="")
+dataFile <- "household_power_consumption.txt"
 dateDownloaded <- NULL
 
 outputFile <- paste(baseDir,"/plot4.png", sep="")
@@ -38,8 +38,11 @@ if(zipFileMD5 != trueFileMD5) {
 
 ## Load the data from the dates 2007-02-01 and 2007-02-02. 
 cat(sprintf("Reading in dataset from file: \n\t%s\n", dataFile))
+unzip(zipFile, files=dataFile)
 powerConsDF <- read.table(pipe('grep "^[1-2]/2/2007\\|^Date" "household_power_consumption.txt"'), 
-                          sep=";",na.strings="?",header=TRUE)
+                          sep=";",
+                          na.strings="?",
+                          header=TRUE)
 
 ##  Convert the Date and Time variables to Date/Time classes
 powerConsDF$Date <- as.Date(powerConsDF$Date,format='%d/%m/%Y')
