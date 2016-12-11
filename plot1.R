@@ -2,7 +2,7 @@
 ## Project 1 - Plot 1
 
 ## Written by: Michael Gregory
-## Date: 13-Sep-2015
+## Date: 11-Dec-2016
 
 ## Set some general variables
 ## Original data description at http://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
@@ -15,7 +15,7 @@ library(sqldf)
 fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 trueFileMD5 <- "41f51806846b6b567b8ae701a300a3de"
 
-##setwd("~/Documents/School/coursera/data science/exploratory data analysis/project1/ExData_Plotting1/")
+##gisetwd("~/Documents/School/coursera/data science/exploratory data analysis/project1/ExData_Plotting1/")
 baseDir <- getwd()
 
 zipFile <- paste(baseDir,"/household_power_consumption.zip", sep="")
@@ -63,7 +63,7 @@ powerConsDF$DateTime<-strptime(powerConsDF$DateTime, format = "%Y-%m-%d %H:%M:%S
 
 ##Open png file 
 cat(sprintf("Opening output file: \n\t%s\n", outputFile))
-png(filename = outputFile, bg = "transparent")
+png(filename = outputFile, bg = "white")
 
 ##Create the image
 hist(powerConsDF$Global_active_power,main = "Global Active Power",

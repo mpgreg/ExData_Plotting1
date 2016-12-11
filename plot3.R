@@ -2,7 +2,7 @@
 ## Project 1 - Plot 3
 
 ## Written by: Michael Gregory
-## Date: 13-Sep-2015
+## Date: 11-Dec-2016
 
 ## Set some general variables
 ## Original data description at http://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
@@ -63,7 +63,7 @@ powerConsDF$DateTime<-strptime(powerConsDF$DateTime, format = "%Y-%m-%d %H:%M:%S
 
 ##Open png file 
 cat(sprintf("Opening output file: \n\t%s\n", outputFile))
-png(filename = outputFile, bg = "transparent")
+png(filename = outputFile, bg = "white")
 
 ##Create the image
 plot(powerConsDF$DateTime, powerConsDF$Sub_metering_1, 
